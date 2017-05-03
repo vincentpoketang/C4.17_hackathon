@@ -1,33 +1,34 @@
 /**
  * Created by regis on 5/2/17.
  */
-var row = 6;
-var col = row+1;
-var how_many_player = 3;
-var board = [];
+var row = 6; // takes input from character select page and sets row amount
+var col = row+1; // sets column amount based on row amount
+var how_many_player = 3; //update this variable based landing page selection
+var board = []; // initializes empty array for game board
 var current_player = 1; // can be player 1, 2, or 3
-var player_img_class = {
+var player_img_class = { // object that creates 3 key val
     1:"kirby_hover",
     2:"peach_hover",
     3:"mario_hover"
 };
 
 function initialize(){
-    for(var y = 0; y < col; y++){
-        var div = $('<div>').addClass("col_"+y);
-        div = $(div).addClass("top_row");
-        $('.container').append(div);
+    for(var y = 0; y < col; y++){ // create divs for hover area based on col variable (in this case 7)
+        var div = $('<div>').addClass("col_"+y); // create a variable div = dom creation element with and "col_" + whatever y is - doing this to create divs in hover area with unique identifiers
+        div = $(div).addClass("top_row"); // taking div from above, targeting the div, and adding a class top row so we can target specific columns and style them in css
+        $('.container').append(div); // appends div to container element until loop condition is false
     }
-    $('.container').append('<br>','<br>');
-    for (var x = 0; x < row; x++){
-        board.push([]);
-        for(y = 0; y < col; y++){
-            board[x][y] = 0;
-            div = $('<div>').addClass("row_"+x);
-            div = div.addClass('col_'+y);
-            $('.container').append(div);
+    $('.container').append('<br>', '<br>'); // append two line breaks to give us space between hover area and board
+    for (var x = 0; x < row; x++){ // start of for loop that creates rows based on user input on landing page
+        board.push([]); // pushing an empty array into the board array - each empty array represents a new column and has index
+        for(y = 0; y < col; y++){ // create a column and push into empty array in board array at index 0 (initially )
+            board[x][y] = 0; // selecting the board array at [0] index and then the [0] index inside of the empty array
+            console.log(board);
+            div = $('<div>').addClass("row_"+x); // adding a class of "row_x" to a new div each time
+            div = div.addClass('col_'+y); // add additional class of "col_y" to the same div
+            $('.container').append(div); // append the new div to container
         }
-        $('.container').append('<br>');
+        $('.container').append('<br>'); // create a line break to give to start a new row
     }
 }
 function hover(){
