@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Supper Connect 4</title>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="script.js"></script>
+</head>
+<body>
+<div id="home">
+    <div class="title-container">
+        <img class="title-image" src="images/super_connect_bros_logo2.png"/>
+    </div>
+    <div class="credits">
+        <p>By: Adam, Regis, and Vincent</p>
+    </div>
+    <div class="player-select">
+        <button class="home_button">2 PLAYER</button>
+        <button class="home_button">3 PLAYER</button>
+    </div>
+</div>
+<div id="character_select" class="hidden">
+    <div id="boardSize">Board Size</div>
+    <div id="characterSelect">
+        <div id="mario" class="character"><img src="images/mario.png"></div>
+        <div id="kirby" class="character"><img src="images/kirby.png"></div>
+        <div id="peach" class="character"><img src="images/peach.png"></div>
+        <div id="yoshi" class="character"><img src="images/yoshi.png"></div>
+        <div id="pikachu" class="character"><img src="images/pikachu.png"></div>
+        <div id="samus" class="character"><img src="images/samus.png"></div>
+    </div>
+    <div id="characterSelectTitle"><img src="images/character%20select.png"></div>
+    <div id="selectedCharacter">
+        <div class="player1"><img src="images/pikachu%20model.png"></div>
+        <div class="vs"><img src="images/vs.png"></div>
+        <div class="player2"><img src="images/peach%20model.png"></div>
+    </div>
+</div>
+<div id="level_select" class="hidden">
+    <div class="ls_header">
+        LEVEL SELECT
+    </div>
+    <div class="ls_container">
+        <div class="ls_row">
+            <div class="ls_level"></div>
+            <div class="ls_level"></div>
+            <div class="ls_level"></div>
+        </div>
+        <div class="ls_row">
+            <div class="ls_level"></div>
+            <div class="ls_level"></div>
+            <div class="ls_level"></div>
+        </div>
+    </div>
+    <button class="ls_button">RANDOM</button>
+</div>
+<div id="game_page" class="hidden">
+    <div class="container">
+    </div>
+</div>
+</body>
+</html>
