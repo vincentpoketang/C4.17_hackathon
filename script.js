@@ -1,17 +1,18 @@
-/**
- * Created by regis on 5/2/17.
- */
 var row = 6; // takes input from character select page and sets row amount
 var col = row+1; // sets column amount based on row amount
 var how_many_player = 3; //update this variable based on landing page selection
 var board = []; // initializes empty array for game board
 var current_player = 1; // can be player 1, 2, or 3
-var player_img_class = { // object that contains 3 properties with class names we will use to determine coin types
-    1:"kirby_hover",
-    2:"peach_hover",
-    3:"mario_hover"
+var player_img_class = {}; // object that contains 3 properties with class names we will use to determine coin types
+var character_map ={
+    mario: 'mario_hover',
+    yoshi: 'yoshi_hover',
+    pikachu: 'pikachu_hover',
+    peach: 'peach_hover',
+    samus: 'samus_hover',
+    kirby: 'kirby_hover'
 };
-
+// function for game board page
 function initialize(){
     for(var y = 0; y < col; y++){ // create divs for hover area based on col variable (in this case 7)
         var div = $('<div>').addClass("col_"+y); // create a variable div = dom creation element with and "col_" + whatever y is - doing this to create divs in hover area with unique identifiers
@@ -32,10 +33,10 @@ function initialize(){
     }
 }
 function hover(){ // when we hover over something, we add a class that takes the current_player number,
-    $(this).addClass(player_img_class[current_player]);  // then uses that number to select a property in the player_img_class object, and then returns it's value
+    $(this).addClass(character_map[player_img_class[current_player]]);  // then uses that number to select a property in the player_img_class object, and then returns it's value
 }
 function not_hover(){ // when we mouseaway from a div we remove the class we added on hover
-    $(this).removeClass(player_img_class[current_player]);
+    $(this).removeClass(character_map[player_img_class[current_player]]);
 }
 function click_coin(){
     var col_number_class = $(this).attr('class').split(' ')[0]; // selecting a div, taking it's classes (ex. col_0, top_row),
@@ -43,10 +44,10 @@ function click_coin(){
     var col_number = col_number_class[col_number_class.length-1]; // creating a variable and setting it to the value of the col_number_class at index [length of the string -1]
     for(var i = row-1; i >= 0; i--){ // use this for loop to check if divs in column are equal to zero starting at the index 5 of board
         if(board[i][col_number]===0){ // on first loop, check if board index 5 at column 0 is equal to value 0 (meaning if it's empty)
-            $(this).removeClass(player_img_class[current_player]); // if it is empty, we remove the class for the image,
+            $(this).removeClass(character_map[player_img_class[current_player]]); // if it is empty, we remove the class for the image,
             board[i][col_number] = current_player; // if the div selected is equal to 0 (empty), set the value to the current player
             var div_id_string = "."+ col_number_class + ".row_"+i; // creating a div id string, first case = ".col_0.row_5"
-            $(div_id_string).addClass(player_img_class[current_player]); // We are searching for an item with class col_0 and row_5 and adding the kirby class
+            $(div_id_string).addClass(character_map[player_img_class[current_player]]); // We are searching for an item with class col_0 and row_5 and adding the kirby class
             win_check(i,col_number); // calling win check with parameter 5, and 0
             toggle_player(); // Calling toggle player function
             break;
@@ -140,7 +141,41 @@ function right_diagonal_check(row_number,col_number){
     }
     return false;
 }
+function hide_div(hide,remove){
+    $(hide).addClass('hidden');
+    $(remove).removeClass('hidden');
+}
+// function for home page
+function set_player(){
+    if($(this).attr('class')==='home_button_2'){
+        how_many_player = 2;
+    }
+    else{
+        how_many_player = 3;
+    }
+    hide_div('#home','#character_select');
+}
+//function for character select page
+function select_player(){
+    if(player_img_class[1]===undefined){
+        player_img_class[1]=$(this).attr('id');
+    }
+    else if(player_img_class[2]===undefined){
+        player_img_class[2]=$(this).attr('id');
+        if(how_many_player===2){
+            hide_div('#character_select','#level_select');
+        }
+    }
+    else if(player_img_class[3]===undefined){
+        player_img_class[3]=$(this).attr('id');
+        hide_div('#character_select','#level_select');
+    }
+
+}
 $(document).ready(function(){
-    initialize();
+    $('.home_button_2').click(set_player);
+    $('.home_button_3').click(set_player);
+    $('.character').click(select_player);
+    //initialize();
     $('.top_row').mouseover(hover).mouseout(not_hover).click(click_coin);
 });

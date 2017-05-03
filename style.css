@@ -27,7 +27,7 @@
     text-align: center;
     padding: 50px;
 }
-.home_button {
+.home_button_2, .home_button_3{
     background-color: transparent;
     font-family: Palatino, sans-serif;
     color: white;
@@ -39,10 +39,10 @@
     border-radius: 10px;
     outline: none;
 }
-.home_button:hover {
+.home_button_2:hover,.home_button_3:hover {
     box-shadow: -1px 1px 8px 4px white;
 }
-.home_button:active {
+.home_button_2:active,.home_button_3:active {
     box-shadow: -1px 1px 8px 4px red;
 
 }
