@@ -12,6 +12,7 @@ var character_map ={
     samus: 'samus_hover',
     kirby: 'kirby_hover'
 };
+var level_selected = "";
 // function for game board page
 function initialize(){
     for(var y = 0; y < col; y++){ // create divs for hover area based on col variable (in this case 7)
@@ -172,10 +173,25 @@ function select_player(){
     }
 
 }
+// function for level select
+
+function select_level(){
+    level_selected = $(this).attr("id");
+    hide_div("#level_select", "#game_page");
+    initialize();
+}
+
+function toggle_background(){
+    var background_img = "url('images/" + $(this).attr("id") + ".jpg')";
+    $("#level_select").css("background", background_img);
+}
+
 $(document).ready(function(){
     $('.home_button_2').click(set_player);
     $('.home_button_3').click(set_player);
     $('.character').click(select_player);
+    $('.ls_level').click(select_level);
+    $(".ls_level").mouseover(toggle_background);
     //initialize();
     $('.top_row').mouseover(hover).mouseout(not_hover).click(click_coin);
 });
