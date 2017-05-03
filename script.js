@@ -186,6 +186,11 @@ function toggle_background(){
     $("#level_select").css("background", background_img);
 }
 
+// function for changing each screen background
+function background_change() {
+    // change the background any time we switch pages
+}
+
 $(document).ready(function(){
     $('.home_button_2').click(set_player);
     $('.home_button_3').click(set_player);

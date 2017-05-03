@@ -1,5 +1,5 @@
 /* Home page Style */
-#home{
+body {
     background-image: url("images/superbackground.png");
     background-size: 100%;
     background-repeat: no-repeat;
