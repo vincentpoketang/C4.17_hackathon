@@ -4,7 +4,7 @@
 }
 
 body {
-    background-image: url("level_1.jpg");
+    background-image: url("images/level_1.jpg");
     background-size: cover;
 }
 
@@ -31,7 +31,7 @@ body {
     display: inline-block;
     height: 200px;
     width: 300px;
-    background-image: url(level_1.jpg);
+    background-image: url('images/level_1.jpg');
     background-size: cover;
     box-shadow: -1px 1px 20px 6px #888888;
     margin: 45px;
