@@ -143,7 +143,30 @@
     text-align: center;
     height: 235px;
 }
-
+#level_1 {
+    background-image: url('images/level_1.jpg');
+    background-size: cover;
+}
+#level_2 {
+    background-image: url('images/level_2.jpg');
+    background-size: cover;
+}
+#level_3 {
+    background-image: url('images/level_3.jpg');
+    background-size: cover;
+}
+#level_4 {
+    background-image: url('images/level_4.jpg');
+    background-size: cover;
+}
+#level_5 {
+    background-image: url('images/level_5.jpg');
+    background-size: cover;
+}
+#level_6 {
+    background-image: url('images/level_6.jpg');
+    background-size: cover;
+}
 .ls_level {
     display: inline-block;
     height: 200px;
@@ -162,27 +185,27 @@
     box-shadow: -1px 1px 20px 6px indianred;
 }
 
-.ls_button{
-    display: block;
-    color: white;
-    font-family: Palatino, sans-serif;
-    text-shadow: 0 0 5px indianred;
-    outline: none;
-    border: 2px solid white;
-    border-radius: 5px;
-    background-color: transparent;
-    margin: auto;
-    font-size: 20px;
-    padding-top: 8px;
-}
+/*.ls_button{*/
+    /*display: block;*/
+    /*color: white;*/
+    /*font-family: Palatino, sans-serif;*/
+    /*text-shadow: 0 0 5px indianred;*/
+    /*outline: none;*/
+    /*border: 2px solid white;*/
+    /*border-radius: 5px;*/
+    /*background-color: transparent;*/
+    /*margin: auto;*/
+    /*font-size: 20px;*/
+    /*padding-top: 8px;*/
+/*}*/
 
-.ls_button:hover {
-    box-shadow: -1px 1px 20px 6px #888888;
-}
+/*.ls_button:hover {*/
+    /*box-shadow: -1px 1px 20px 6px #888888;*/
+/*}*/
 
-.ls_button:active {
-    box-shadow: -1px 1px 20px 6px indianred;
-}
+/*.ls_button:active {*/
+    /*box-shadow: -1px 1px 20px 6px indianred;*/
+/*}*/
 /* Game Page Style */
 #game_page {
     background-image: url("images/level_1.jpg");
