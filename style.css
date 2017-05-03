@@ -208,10 +208,12 @@ body {
 /*}*/
 /* Game Page Style */
 #game_page {
-    background-image: url("images/level_1.jpg");
+    background-image: url(images/level_1.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     cursor: pointer;
+    height: 568px;
+    background-position-y: 50px;
 }
 .container{
     width: 100%;
