@@ -183,7 +183,7 @@ function select_level(){
 
 function toggle_background(){
     var background_img = "url('images/" + $(this).attr("id") + ".jpg')";
-    $("#level_select").css("background", background_img);
+    $('body').css("background", background_img);
 }
 
 
