@@ -3,10 +3,10 @@
  */
 var row = 6; // takes input from character select page and sets row amount
 var col = row+1; // sets column amount based on row amount
-var how_many_player = 3; //update this variable based landing page selection
+var how_many_player = 3; //update this variable based on landing page selection
 var board = []; // initializes empty array for game board
 var current_player = 1; // can be player 1, 2, or 3
-var player_img_class = { // object that creates 3 key val
+var player_img_class = { // object that contains 3 properties with class names we will use to determine coin types
     1:"kirby_hover",
     2:"peach_hover",
     3:"mario_hover"
@@ -31,23 +31,24 @@ function initialize(){
         $('.container').append('<br>'); // create a line break to give to start a new row
     }
 }
-function hover(){
-    $(this).addClass(player_img_class[current_player]);
+function hover(){ // when we hover over something, we add a class that takes the current_player number,
+    $(this).addClass(player_img_class[current_player]);  // then uses that number to select a property in the player_img_class object, and then returns it's value
 }
-function not_hover(){
+function not_hover(){ // when we mouseaway from a div we remove the class we added on hover
     $(this).removeClass(player_img_class[current_player]);
 }
 function click_coin(){
-    var col_number_class = $(this).attr('class').split(' ')[0];
-    var col_number = col_number_class[col_number_class.length-1];
-    for(var i = row-1; i >= 0; i--){
-        if(board[i][col_number]===0){
-            $(this).removeClass(player_img_class[current_player]);
-            board[i][col_number] = current_player;
-            var stuff = "."+ col_number_class + ".row_"+i; // .col_0.row_4
-            $(stuff).addClass(player_img_class[current_player]);
-            win_check(i,col_number);
-            toggle_player();
+    var col_number_class = $(this).attr('class').split(' ')[0]; // selecting a div, taking it's classes (ex. col_0, top_row),
+    // converting them into separate strings based on space separation, pushing those values into an array, and then grabbing the value of the first item in the array
+    var col_number = col_number_class[col_number_class.length-1]; // creating a variable and setting it to the value of the col_number_class at index [length of the string -1]
+    for(var i = row-1; i >= 0; i--){ // use this for loop to check if divs in column are equal to zero starting at the index 5 of board
+        if(board[i][col_number]===0){ // on first loop, check if board index 5 at column 0 is equal to value 0 (meaning if it's empty)
+            $(this).removeClass(player_img_class[current_player]); // if it is empty, we remove the class for the image,
+            board[i][col_number] = current_player; // if the div selected is equal to 0 (empty), set the value to the current player
+            var div_id_string = "."+ col_number_class + ".row_"+i; // creating a div id string, first case = ".col_0.row_5"
+            $(div_id_string).addClass(player_img_class[current_player]); // We are searching for an item with class col_0 and row_5 and adding the kirby class
+            win_check(i,col_number); // calling win check with parameter 5, and 0
+            toggle_player(); // Calling toggle player function
             break;
         }
     }
@@ -61,14 +62,15 @@ function toggle_player(){
     }
     return current_player;
 }
+
 function win_check(row_number, col_number){
     if(horizontal_check(row_number) || vertical_check(col_number) || left_diagonal_check(row_number,col_number) || right_diagonal_check(row_number,col_number)){
         console.log("win");
     }
 }
 function horizontal_check(row_number){
-    var coin_counter = 0;
-    for(var y = 0; y < col; y++){
+    var coin_counter = 0; // coin counter checks to see if we have 4 coins in a row
+    for(var y = 0; y < col; y++){  // y represents column number
         if(board[row_number][y] === current_player){
             coin_counter++;
             if(coin_counter >= 4){
@@ -81,7 +83,7 @@ function horizontal_check(row_number){
     }
     return false;
 }
-function vertical_check(col_number){
+function vertical_check(col_number){ // checks from top to bottom for 4 in a row
     var coin_counter = 0;
     for(var x = 0; x < row; x++){
         if(board[x][col_number] === current_player){
@@ -94,14 +96,14 @@ function vertical_check(col_number){
             coin_counter = 0;
         }
     }
-    return false;
+    return false; // returns false if condition is never met (returned true)
 }
-function left_diagonal_check(row_number,col_number){
+function left_diagonal_check(row_number,col_number){ // checking diagonals from left to right, top to bottom for 4 in a row
     var coin_counter = 0;
     var start_row_number = row_number;
     var start_col_number = col_number;
-    while(start_row_number !== 0 && start_col_number !== 0){
-        start_row_number--;
+    while(start_row_number !== 0 && start_col_number !== 0){ // while loop we are going to move to a position where
+        start_row_number--; // we would be able to perform our check from top to bottom, right to left
         start_col_number--;
     }
     for(var x = start_row_number,y = start_col_number; x < row && y < col; x++, y++){
