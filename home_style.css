@@ -1,0 +1,38 @@
+body {
+    background-image: url("../images/superbackground.png");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-color: black;
+    background-position-y: 100px;
+
+}
+.title-image {
+    /*size: 80%;*/
+    text-align: center;
+    position: relative;
+    width: 80%;
+    padding: 10%;
+}
+.player-select {
+    margin: 0 auto;
+    text-align: center;
+}
+.button {
+    background-color: transparent;
+    font-family: Palatino, sans-serif;
+    color: white;
+    border: solid white;
+    padding: 10px;
+    font-size: 18px;
+    margin: 8px 50px;
+    text-align: center;
+    border-radius: 10px;
+    outline: none;
+}
+.button:hover {
+    box-shadow: -1px 1px 8px 4px white;
+}
+.button:active {
+    box-shadow: -1px 1px 8px 4px red;
+
+}
