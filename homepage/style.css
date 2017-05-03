@@ -3,7 +3,8 @@ body {
     background-size: 100%;
     background-repeat: no-repeat;
     background-color: black;
-    background-position-y: 100px;
+    /*background-position-y: 100px;*/
+    cursor: pointer;
 
 }
 .title-image {
@@ -11,11 +12,12 @@ body {
     text-align: center;
     position: relative;
     width: 80%;
-    padding: 10%;
+    padding: 10% 10% 1% 10%;
 }
 .player-select {
     margin: 0 auto;
     text-align: center;
+    padding: 50px;
 }
 .button {
     background-color: transparent;
@@ -28,6 +30,7 @@ body {
     text-align: center;
     border-radius: 10px;
     outline: none;
+    cursor: pointer;
 }
 .button:hover {
     box-shadow: -1px 1px 8px 4px white;
@@ -35,4 +38,16 @@ body {
 .button:active {
     box-shadow: -1px 1px 8px 4px red;
 
+
+}
+.credits {
+    margin: auto;
+    color: white;
+}
+.credits>p {
+    font-family: Palatino, sans-serif;
+    font-size: 16px;
+    /*word-spacing: 20px;*/
+    padding: 2px 2px;
+    text-align: center;
 }
