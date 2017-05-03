@@ -201,7 +201,8 @@ body{
 .container{
     width: 100%;
     text-align: center;
-    margin:auto;
+    margin: auto;
+    padding-top: 50px;
 }
 .container>div{
     width: 45px;
@@ -213,6 +214,7 @@ body{
 }
 .container>.top_row{
     border: none;
+    background: red;
 }
 .peach_hover{
     background: url("images/peach coin.png");
