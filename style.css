@@ -1,0 +1,232 @@
+/* Home page Style */
+#home{
+    background-image: url("images/superbackground.png");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-color: black;
+}
+.credits{
+    margin: auto;
+    color: white;
+}
+.credits>p{
+    font-family: Palatino, sans-serif;
+    font-size: 16px;
+    padding: 2px 2px;
+    text-align: center;
+}
+.title-image {
+    /*size: 80%;*/
+    text-align: center;
+    position: relative;
+    width: 80%;
+    padding: 10% 10% 1% 10%;
+}
+.player-select {
+    margin: 0 auto;
+    text-align: center;
+    padding: 50px;
+}
+.home_button {
+    background-color: transparent;
+    font-family: Palatino, sans-serif;
+    color: white;
+    border: solid white;
+    padding: 10px;
+    font-size: 18px;
+    margin: 8px 50px;
+    text-align: center;
+    border-radius: 10px;
+    outline: none;
+}
+.home_button:hover {
+    box-shadow: -1px 1px 8px 4px white;
+}
+.home_button:active {
+    box-shadow: -1px 1px 8px 4px red;
+
+}
+/* Character Select Page*/
+#character_select{
+    background: url("images/background.png");
+    background-size: cover;
+}
+#boardSize{
+    display: block;
+    width: 900px;
+    height: 50px;
+    margin: 20px auto 0 auto;
+    text-align: center;
+    border: 1px solid black;
+}
+#characterSelect{
+    display: block;
+    width: 1000px;
+    height: 150px;
+    margin: 20px auto 0 auto;
+    text-align: center;
+}
+#characterSelectTitle>img{
+    width: 500px;
+}
+.character{
+    display: inline-block;
+    width: 150px;
+    height: 150px;
+    margin: 5px;
+}
+.character>img{
+    width: 150px;
+}
+#characterSelectTitle{
+    margin: 10px auto 0 auto;
+    display: block;
+    width: 1000px;
+    height: 50px;
+    text-align: center;
+    font-size: 20px;
+}
+#selectedCharacter{
+    display: block;
+    margin: 10px auto 0 auto;
+    width: 1000px;
+    height: 300px;
+    text-align: center;
+}
+#selectedCharacter>div{
+    display: inline-block;
+    width: 300px;
+    height: 300px;
+}
+.player1{
+    background-color: red;
+    margin-right: 10px;
+}
+.player2{
+    background-color: blue;
+    margin-left: 10px;
+}
+.player3{
+    background-color: yellow;
+    margin-left: 10px;
+}
+/*Level Select Style */
+@font-face {
+    font-family: ssb_font;
+    src: url(images/ssb_font.ttf);
+}
+
+#level_select {
+    background-image: url("images/level_1.jpg");
+    background-size: cover;
+}
+
+.hidden{
+    display: none;
+}
+
+.ls_header{
+    text-align: center;
+    font-family: ssb_font;
+    font-size: 45px;
+    color: white;
+    text-shadow: 0px 0px 10px indianred;
+}
+
+.ls_container {
+    height: 80vh;
+}
+
+.ls_row{
+    display: block;
+    margin: auto;
+    text-align: center;
+    height: 235px;
+}
+
+.ls_level {
+    display: inline-block;
+    height: 200px;
+    width: 300px;
+    background-image: url('images/level_1.jpg');
+    background-size: cover;
+    box-shadow: -1px 1px 20px 6px #888888;
+    margin: 45px;
+}
+
+.ls_level:hover {
+    box-shadow: -1px 1px 20px 6px white;
+}
+
+.ls_level:active {
+    box-shadow: -1px 1px 20px 6px indianred;
+}
+
+.ls_button{
+    display: block;
+    color: white;
+    font-family: Palatino, sans-serif;
+    text-shadow: 0 0 5px indianred;
+    outline: none;
+    border: 2px solid white;
+    border-radius: 5px;
+    background-color: transparent;
+    margin: auto;
+    font-size: 20px;
+    padding-top: 8px;
+}
+
+.ls_button:hover {
+    box-shadow: -1px 1px 20px 6px #888888;
+}
+
+.ls_button:active {
+    box-shadow: -1px 1px 20px 6px indianred;
+}
+/* Game Page Style */
+#game_page {
+    background-image: url("images/level_1.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    cursor: pointer;
+}
+.container{
+    width: 100%;
+    text-align: center;
+    margin:auto;
+}
+.container>div{
+    width: 45px;
+    height: 45px;
+    display: inline-block;
+    margin-top: -5px;
+    margin-right: -1px;
+    border:1px solid black;
+}
+.container>.top_row{
+    border: none;
+}
+.peach_hover{
+    background: url("images/peach coin.png");
+    background-size: cover;
+}
+.kirby_hover{
+    background: url("images/kirby coin.png");
+    background-size: cover;
+}
+.mario_hover{
+    background: url("images/mario coin.png");
+    background-size: cover;
+}
+.yoshi_hover{
+    background: url("images/yoshi coin.png");
+    background-size: cover;
+}
+.pikachu_hover{
+    background: url("images/pikachu coin.png");
+    background-size: cover;
+}
+.samus_hover{
+    background: url("images/samus coin.png");
+    background-size: cover;
+}
