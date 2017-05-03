@@ -1,5 +1,5 @@
 /* Home page Style */
-body {
+body{
     background-image: url("images/superbackground.png");
     background-size: 100%;
     background-repeat: no-repeat;
@@ -47,10 +47,6 @@ body {
 
 }
 /* Character Select Page*/
-#character_select{
-    background: url("images/background.png");
-    background-size: cover;
-}
 #boardSize{
     display: block;
     width: 900px;
@@ -115,12 +111,6 @@ body {
     font-family: ssb_font;
     src: url(images/ssb_font.ttf);
 }
-
-#level_select {
-    background-image: url("images/level_1.jpg");
-    background-size: cover;
-}
-
 .hidden{
     display: none;
 }
@@ -207,12 +197,7 @@ body {
     /*box-shadow: -1px 1px 20px 6px indianred;*/
 /*}*/
 /* Game Page Style */
-#game_page {
-    background-image: url("images/level_1.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    cursor: pointer;
-}
+
 .container{
     width: 100%;
     text-align: center;
