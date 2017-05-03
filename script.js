@@ -25,7 +25,6 @@ function initialize(){
         board.push([]); // pushing an empty array into the board array - each empty array represents a new column and has index
         for(y = 0; y < col; y++){ // create a column and push into empty array in board array at index 0 (initially )
             board[x][y] = 0; // selecting the board array at [0] index and then the [0] index inside of the empty array
-            console.log(board);
             div = $('<div>').addClass("row_"+x); // adding a class of "row_x" to a new div each time
             div = div.addClass('col_'+y); // add additional class of "col_y" to the same div
             $('.container').append(div); // append the new div to container
@@ -179,6 +178,7 @@ function select_level(){
     level_selected = $(this).attr("id");
     hide_div("#level_select", "#game_page");
     initialize();
+    $('.top_row').click(click_coin).mouseover(hover).mouseout(not_hover);
 }
 
 function toggle_background(){
@@ -195,8 +195,6 @@ $(document).ready(function(){
     $('.home_button_2').click(set_player);
     $('.home_button_3').click(set_player);
     $('.character').click(select_player);
-    $('.ls_level').click(select_level);
-    $(".ls_level").mouseover(toggle_background);
+    $('.ls_level').click(select_level).mouseover(toggle_background);
     //initialize();
-    $('.top_row').mouseover(hover).mouseout(not_hover).click(click_coin);
 });
