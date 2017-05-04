@@ -191,6 +191,10 @@ function background_change() {
     // change the background any time we switch pages
 }
 
+// Modal Stuff
+
+
+
 $(document).ready(function(){
     $('.home_button_2').click(set_player);
     $('.home_button_3').click(set_player);
