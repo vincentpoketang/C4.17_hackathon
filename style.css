@@ -246,3 +246,9 @@ body{
     background: url("images/samus coin.png");
     background-size: cover;
 }
+
+#win_page {
+    font-family: ssb_font;
+    font-size: 250px;
+    text-align: center;
+}
