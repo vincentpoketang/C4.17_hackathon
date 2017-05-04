@@ -63,7 +63,6 @@ function toggle_player(){
     }
     return current_player;
 }
-
 function win_check(row_number, col_number){
     if(horizontal_check(row_number) || vertical_check(col_number) || left_diagonal_check(row_number,col_number) || right_diagonal_check(row_number,col_number)){
         console.log("win");
@@ -154,21 +153,25 @@ function set_player(){
         how_many_player = 3;
     }
     hide_div('#home','#character_select');
+    create_div_for_player();
 }
 //function for character select page
 function select_player(){
     if(player_img_class[1]===undefined){
         player_img_class[1]=$(this).attr('id');
+        $('.player1').addClass(character_map[player_img_class[1]]);
     }
     else if(player_img_class[2]===undefined){
         player_img_class[2]=$(this).attr('id');
+        $('.player2').addClass(character_map[player_img_class[2]]);
         if(how_many_player===2){
-            hide_div('#character_select','#level_select');
+            setTimeout(function(){hide_div('#character_select','#level_select')},1000);
         }
     }
     else if(player_img_class[3]===undefined){
         player_img_class[3]=$(this).attr('id');
-        hide_div('#character_select','#level_select');
+        $('.player3').addClass(character_map[player_img_class[3]]);
+        setTimeout(function(){hide_div('#character_select','#level_select')},1000);
     }
 
 }
@@ -180,21 +183,34 @@ function select_level(){
     initialize();
     $('.top_row').click(click_coin).mouseover(hover).mouseout(not_hover);
 }
-
 function toggle_background(){
     var background_img = "url('images/" + $(this).attr("id") + ".jpg')";
     $('body').css("background", background_img);
 }
+function create_div_for_player(){
+    var player1 = $('<div>').addClass('player1');
+    var vs = $('<div>').addClass('vs').prepend('<img src="images/vs.png" />');
+    var player2 = $('<div>').addClass('player2');
+    $('#selectedCharacter').append(player1,vs,player2);
+    if(how_many_player===3){
+        var vs2 = $('<div>').addClass('vs').prepend('<img src="images/vs.png" />');
+        var player3 = $('<div>').addClass('player3');
+        $('#selectedCharacter').append(vs2,player3);
+        $('#selectedCharacter>div').css({
+            display: 'inline-block',
+            width: '175px',
+            height: '175px'
+        });
+        $('#selectedCharacter>div>img').css({
+            width: '175px',
+            height: '175px'
+        });
+    }
 
-// function for changing each screen background
-function background_change() {
-    // change the background any time we switch pages
 }
-
 $(document).ready(function(){
     $('.home_button_2').click(set_player);
     $('.home_button_3').click(set_player);
     $('.character').click(select_player);
     $('.ls_level').click(select_level).mouseover(toggle_background);
-    //initialize();
 });
