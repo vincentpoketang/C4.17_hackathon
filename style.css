@@ -68,9 +68,11 @@ body{
 .character{
     display: inline-block;
     width: 150px;
-    height: 150px;
+    height: 123px;
     margin: 5px;
 }
+
+
 .character>img{
     width: 150px;
 }
