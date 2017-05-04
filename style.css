@@ -249,6 +249,54 @@ body{
 
 #win_page {
     font-family: ssb_font;
-    font-size: 250px;
+    font-size: 92px;
     text-align: center;
+}
+
+.peach_gif {
+    content: url(images/peach.gif);
+    margin: auto;
+    margin-top: 100px;
+    margin-bottom: 50px;
+    box-shadow: -1px 1px 20px 6px indianred;
+}
+
+.mario_gif {
+    content: url(images/mario.gif);
+    margin: auto;
+    margin-top: 100px;
+    margin-bottom: 50px;
+    box-shadow: -1px 1px 20px 6px indianred;
+}
+
+.pikachu_gif {
+    content: url(images/pikachu.gif);
+    margin: auto;
+    margin-top: 100px;
+    margin-bottom: 50px;
+    box-shadow: -1px 1px 20px 6px indianred;
+}
+
+.samus_gif {
+    content: url(images/samus.gif);
+    margin: auto;
+    margin-top: 100px;
+    margin-bottom: 50px;
+    box-shadow: -1px 1px 20px 6px indianred;
+}
+
+.kirby_gif {
+    content: url(images/kirby.gif);
+    margin: auto;
+    margin-top: 100px;
+    margin-bottom: 50px;
+    box-shadow: -1px 1px 20px 6px indianred;
+}
+
+.yoshi_gif {
+    content: url(images/yoshi.gif);
+    margin: auto;
+    margin-top: 100px;
+    margin-bottom: 50px;
+    box-shadow: -1px 1px 20px 6px indianred;
 }
