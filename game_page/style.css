@@ -1,0 +1,46 @@
+body {
+    background-image: url("level_1.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    cursor: pointer;
+}
+.container{
+    width: 100%;
+    text-align: center;
+    margin:auto;
+}
+.container>div{
+    width: 45px;
+    height: 45px;
+    display: inline-block;
+    margin-top: -5px;
+    margin-right: -1px;
+    border:1px solid black;
+}
+.container>.top_row{
+    border: none;
+}
+.peach_hover{
+    background: url("peach coin.png");
+    background-size: cover;
+}
+.kirby_hover{
+    background: url("kirby coin.png");
+    background-size: cover;
+}
+.mario_hover{
+    background: url("mario coin.png");
+    background-size: cover;
+}
+.yoshi_hover{
+    background: url("yoshi coin.png");
+    background-size: cover;
+}
+.pikachu_hover{
+    background: url("pikachu coin.png");
+    background-size: cover;
+}
+.samus_hover{
+    background: url("samus coin.png");
+    background-size: cover;
+}
