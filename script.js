@@ -287,6 +287,8 @@ function create_div_for_player(){
 function win_ending(character){
     var win_message = character + " wins!";
     var win_div = $("<div>").text(win_message.toUpperCase());
+    var win_gif = $('<div>').addClass(character + "_gif");
+    $('#win_page').append(win_gif);
     $('#win_page').append(win_div);
     // plug into a win statement on the win page
 }
