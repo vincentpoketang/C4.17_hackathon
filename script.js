@@ -206,8 +206,8 @@ function create_div_for_player(){
             height: '175px'
         });
     }
-
 }
+
 $(document).ready(function(){
     $('.home_button_2').click(set_player);
     $('.home_button_3').click(set_player);
