@@ -247,7 +247,8 @@ body{
     background-size: cover;
 }
 
-#win_page h1{
+#win_page {
     font-family: ssb_font;
     font-size: 250px;
+    text-align: center;
 }
