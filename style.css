@@ -95,15 +95,12 @@ body{
     height: 300px;
 }
 .player1{
-    background-color: red;
     margin-right: 10px;
 }
 .player2{
-    background-color: blue;
     margin-left: 10px;
 }
 .player3{
-    background-color: yellow;
     margin-left: 10px;
 }
 /*Level Select Style */
