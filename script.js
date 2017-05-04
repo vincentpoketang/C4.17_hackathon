@@ -48,7 +48,8 @@ function click_coin(){
             board[i][col_number] = current_player; // if the div selected is equal to 0 (empty), set the value to the current player
             var div_id_string = "."+ col_number_class + ".row_"+i; // creating a div id string, first case = ".col_0.row_5"
             $(div_id_string).addClass(character_map[player_img_class[current_player]]); // We are searching for an item with class col_0 and row_5 and adding the kirby class
-            win_check(i,col_number); // calling win check with parameter 5, and 0
+            var character = player_img_class[current_player];
+            win_check(i,col_number, character); // calling win check with parameter 5, and 0
             toggle_player(); // Calling toggle player function
             break;
         }
@@ -63,9 +64,10 @@ function toggle_player(){
     }
     return current_player;
 }
-function win_check(row_number, col_number){
+function win_check(row_number, col_number, character){
     if(horizontal_check(row_number) || vertical_check(col_number) || left_diagonal_check(row_number,col_number) || right_diagonal_check(row_number,col_number)){
         setTimeout(function(){hide_div("#game_page","#win_page")},500);
+        win_ending(character);
     }
 }
 function horizontal_check(row_number){
@@ -278,6 +280,15 @@ function create_div_for_player(){
             height: '175px'
         });
     }
+}
+
+// win page ending
+
+function win_ending(character){
+    var win_message = character + " wins!";
+    var win_div = $("<div>").text(win_message.toUpperCase());
+    $('#win_page').append(win_div);
+    // plug into a win statement on the win page
 }
 
 $(document).ready(function(){
