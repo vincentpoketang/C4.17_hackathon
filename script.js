@@ -65,7 +65,7 @@ function toggle_player(){
 }
 function win_check(row_number, col_number){
     if(horizontal_check(row_number) || vertical_check(col_number) || left_diagonal_check(row_number,col_number) || right_diagonal_check(row_number,col_number)){
-        console.log("win");
+        setTimeout(function(){hide_div("#game_page","#win_page")},500);
     }
 }
 function horizontal_check(row_number){
@@ -120,6 +120,78 @@ function left_diagonal_check(row_number,col_number){ // checking diagonals from 
     return false;
 }
 function right_diagonal_check(row_number,col_number){
+    var coin_counter = 0;
+    var start_row_number = row_number;
+    var start_col_number = col_number;
+    while(start_row_number !== 0 && start_col_number !== col){
+        start_row_number--;
+        start_col_number++;
+    }
+    for(var x = start_row_number,y = start_col_number; x < row && y >= 0; x++, y--){
+        if(board[x][y] === current_player){
+            coin_counter++;
+            if(coin_counter >= 4){
+                return true;
+            }
+        }
+        else{
+            coin_counter = 0;
+        }
+    }
+    return false;
+}
+function horizontal_check_3(row_number){
+    var coin_counter = []; // coin counter checks to see if we have 4 coins in a row
+    for(var y = 0; y < col; y++){  // y represents column number
+        if(board[row_number][y] === current_player){
+            coin_counter.push(board[row_number][y]);
+            if(coin_counter.length===3){
+                return true;
+            }
+        }
+        else{
+            coin_counter = 0;
+        }
+    }
+    return false;
+}
+function vertical_check_3(col_number){ // checks from top to bottom for 4 in a row
+    var coin_counter = 0;
+    for(var x = 0; x < row; x++){
+        if(board[x][col_number] === current_player){
+            coin_counter++;
+            if(coin_counter >= 4){
+                return true;
+            }
+        }
+        else{
+            coin_counter = 0;
+        }
+    }
+    return false; // returns false if condition is never met (returned true)
+}
+function left_diagonal_check_3(row_number,col_number){ // checking diagonals from left to right, top to bottom for 4 in a row
+    var coin_counter = 0;
+    var start_row_number = row_number;
+    var start_col_number = col_number;
+    while(start_row_number !== 0 && start_col_number !== 0){ // while loop we are going to move to a position where
+        start_row_number--; // we would be able to perform our check from top to bottom, right to left
+        start_col_number--;
+    }
+    for(var x = start_row_number,y = start_col_number; x < row && y < col; x++, y++){
+        if(board[x][y] === current_player){
+            coin_counter++;
+            if(coin_counter >= 4){
+                return true;
+            }
+        }
+        else{
+            coin_counter = 0;
+        }
+    }
+    return false;
+}
+function right_diagonal_check_3(row_number,col_number){
     var coin_counter = 0;
     var start_row_number = row_number;
     var start_col_number = col_number;
