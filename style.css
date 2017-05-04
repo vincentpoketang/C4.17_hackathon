@@ -68,9 +68,14 @@ body{
 .character{
     display: inline-block;
     width: 150px;
-    height: 150px;
+    height: 123px;
     margin: 5px;
 }
+
+.character:hover{
+    box-shadow: -1px 1px 20px 6px white;
+}
+
 .character>img{
     width: 150px;
 }
